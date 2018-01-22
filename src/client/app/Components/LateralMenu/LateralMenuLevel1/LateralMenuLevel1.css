@@ -1,0 +1,40 @@
+.LateralMenuLevel1 {
+    background-color: #434343ff;
+    height: 150px;
+    max-height: 100px;
+    -webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out;
+    position: relative;
+}
+
+.opened {
+    max-height: 150px;
+    box-shadow: 0 4px 28px black;
+}
+
+.secondMenuLevel1Content{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    height: 47px;
+    padding: 0 50px;
+    width: calc(100% - 100px);
+}
+
+.menu-item {
+    width: calc(20% - 10px);
+    text-align: center;
+    background: radial-gradient(#6d7171, transparent);
+    margin: 5px;
+    border: 1px #686c6c solid;
+    border-radius: 5px;
+    line-height: 40px;
+}
+
+.selected {
+    background: radial-gradient(#587d90, transparent);
+    font-weight: bold;
+    border: 1px #878c8c solid;
+    text-shadow: 0 0 2px #ffffff;
+}
