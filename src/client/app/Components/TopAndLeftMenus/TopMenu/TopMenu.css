@@ -1,4 +1,4 @@
-.LateralMenuLevel1 {
+.TopMenu {
     background-color: #434343ff;
     height: 150px;
     max-height: 100px;
@@ -8,12 +8,12 @@
     position: relative;
 }
 
-.opened {
+.TopMenuOpened {
     max-height: 150px;
-    box-shadow: 0 4px 28px black;
+    box-shadow: -5px -16px 19px 20px black;
 }
 
-.secondMenuLevel1Content{
+.TopMenuContent {
     display: flex;
     position: absolute;
     bottom: 0;
@@ -23,18 +23,29 @@
 }
 
 .menu-item {
-    width: calc(20% - 10px);
+    color: #2f2f2f;
+    width: calc(100% / 7 - 10px);
     text-align: center;
     background: radial-gradient(#6d7171, transparent);
     margin: 5px;
     border: 1px #686c6c solid;
     border-radius: 5px;
     line-height: 40px;
+    cursor: pointer;
 }
 
-.selected {
+.menu-item:hover:not(.menu-item-selected){
+    border: 1px #878c8c solid;
+    color: #a8aeae;
+    font-weight: lighter;
+    text-shadow: none;
+}
+
+.menu-item-selected {
+    color: black;
     background: radial-gradient(#587d90, transparent);
     font-weight: bold;
-    border: 1px #878c8c solid;
+    border: 1px #b9c0c0 solid;
     text-shadow: 0 0 2px #ffffff;
 }
+

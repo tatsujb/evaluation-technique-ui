@@ -13,14 +13,14 @@ class TopBar extends Component {
     }
 
     render() {
-        const firstMenuLevel = this.props.firstMenuLevel;
+        const firstMenuLevel = this.props.topMenuOpened;
         return (
-                <div className={firstMenuLevel ? 'TopBar firstLevelOpened' : 'TopBar'}>
+                <div className={firstMenuLevel ? 'TopBar TopBarOpened' : 'TopBar'}>
                     <div><img src={logo} className="eole-logo" alt="Company Logo" /></div>
                     <h1 className="TopBar-title">Site Web d'Évaluation Technique</h1>
                     <div
                         className="menu-icon-container"
-                        onClick={this.props.toggleFirstMenuLevel}
+                        onClick={this.props.toggleTopMenu}
                     >
                         <div className="menu-icon-c">
                             <img
@@ -35,8 +35,8 @@ class TopBar extends Component {
 }
 
 TopBar.propTypes = {
-    toggleFirstMenuLevel: PropTypes.func,
-    firstMenuLevel: PropTypes.bool,
+    toggleTopMenu: PropTypes.func,
+    topMenuOpened: PropTypes.bool,
 };
 
 export default TopBar;

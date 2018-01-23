@@ -1,0 +1,70 @@
+.ContentContainer {
+    display: flex;
+    flex: 1;
+}
+
+.LeftMenu {
+    width: 0;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+}
+
+.LeftMenuRelative {
+    position: relative;
+}
+
+.LeftMenuOpened {
+    width: 350px;
+}
+
+.LeftMenuFinal {
+    height: 100%;
+    background-color: #5a5a5aff;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+
+.LeftMenuFinalOpened{
+    box-shadow: -18px 0 19px 20px black;
+}
+
+.LeftMenuFinalSwitch {
+    margin-right: 350px;
+}
+
+.MenuLeft {
+    direction:rtl;
+    position: absolute;
+    right: 0;
+    width: 320px;
+    padding: 15px;
+    height: calc(100vh - 180px);
+    overflow-y: auto;
+}
+
+.MenuButton {
+    color: #252525;
+    direction:ltr;
+    text-align: center;
+    background: radial-gradient(transparent, transparent, #434343ff);
+    margin: 5px;
+    border: 1px #8a8a8a solid;
+    border-radius: 5px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.MenuButton:hover:not(.MenuButtonSelected){
+    border: 1px #878c8c solid;
+    color: #a8aeae;
+    font-weight: lighter;
+    text-shadow: none;
+}
+
+.MenuButtonSelected {
+    color: black;
+    background: radial-gradient(#587d90, transparent);
+    font-weight: bold;
+    border: 1px #b9c0c0 solid;
+    text-shadow: 0 0 2px #ffffff;
+}
