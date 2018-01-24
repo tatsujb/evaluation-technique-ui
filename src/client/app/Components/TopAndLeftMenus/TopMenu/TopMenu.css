@@ -2,9 +2,9 @@
     background-color: #434343ff;
     height: 150px;
     max-height: 100px;
-    -webkit-transition: all 0.8s ease-in-out;
-    -moz-transition: all 0.8s ease-in-out;
-    transition: all 0.8s ease-in-out;
+    -webkit-transition: all .8s ease-in-out;
+    -moz-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out;
     position: relative;
 }
 
@@ -22,23 +22,35 @@
     width: calc(100% - 100px);
 }
 
+
+.MenuText{
+    margin-left: 32px;
+    width: calc(100% - 32px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .menu-item {
-    color: #2f2f2f;
+    font-weight: lighter;
+    position: relative;
+    color: #99b8ce;
     width: calc(100% / 7 - 10px);
     text-align: center;
     background: radial-gradient(#6d7171, transparent);
     margin: 5px;
     border: 1px #686c6c solid;
     border-radius: 5px;
-    line-height: 40px;
+    line-height: 35px;
     cursor: pointer;
+    text-shadow: 0 0 5px #000000;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    transition: all .3s linear;
 }
 
 .menu-item:hover:not(.menu-item-selected){
     border: 1px #878c8c solid;
-    color: #a8aeae;
-    font-weight: lighter;
-    text-shadow: none;
 }
 
 .menu-item-selected {
@@ -46,6 +58,51 @@
     background: radial-gradient(#587d90, transparent);
     font-weight: bold;
     border: 1px #b9c0c0 solid;
-    text-shadow: 0 0 2px #ffffff;
+    text-shadow: 0 0 10px #ffffff;
+}
+
+.MenuIcon, .MenuIconPulse{
+    pointer-events: none;
+    opacity: 0;
+    position: absolute;
+    color: white;
+    font-size: 7em;
+    left: -25px;
+    top: -35px;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    transition: all .3s linear;
+}
+
+.menu-item-selected .MenuIcon{
+    opacity: 1;
+    font-size: x-large;
+    left: 8px;
+    top: 5px;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    transform: rotate(360deg);
+}
+
+.menu-item-selected .MenuIconPulse{
+    animation: pulsate .3s linear;
+    animation-iteration-count: 1;
+    animation-delay: .35s;
+}
+
+@keyframes pulsate{
+    0%{
+        opacity: 1;
+        transform: scale(0.0);
+        left: -19px;
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1.1);
+        left: -35px;
+    }
 }
 

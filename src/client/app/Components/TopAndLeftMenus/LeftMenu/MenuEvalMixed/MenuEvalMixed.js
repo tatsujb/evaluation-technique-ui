@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class MenuEvalMixed extends Component {
     render(){
         return (
-            <div className="MenuLeft">
-                <div className="MenuButton">trop d'éléments :)</div>
+            <div className="SideMenuContent">
+                <div className="MenuButton">beaucoup d'éléments :)</div>
                 <div className="MenuButton">AngularJS</div>
                 <div className="MenuButton">React JS</div>
                 <div className="MenuButton">Redux</div>

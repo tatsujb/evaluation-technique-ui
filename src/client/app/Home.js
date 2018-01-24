@@ -8,10 +8,12 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            neverOpenedWebsite: true,
             topMenuOpened: false,
             leftMenuSwitching: false,
-            leftMenuHover : 0,
-            leftMenuContent : 0
+            leftMenuValueStorageVariable: 0,
+            leftMenuHover: 0,
+            leftMenuContent: 0
         };
         this.toggleTopMenu = this.toggleTopMenu.bind(this);
         this.toggleSwitching = this.toggleSwitching.bind(this);
@@ -20,18 +22,28 @@ class Home extends Component {
     }
 
     toggleTopMenu(){
-        if (this.state.topMenuOpened) {
+        if ( this.state.neverOpenedWebsite ) {
             this.setState({
-                topMenuOpened: !this.state.topMenuOpened,
-                leftMenuHover : 0,
-                leftMenuSwitching: false,
+                topMenuOpened: true,
+                leftMenuHover: 1,
+                leftMenuContent: 1,
+                neverOpenedWebsite: false
             });
         } else {
-            this.setState({
-                topMenuOpened: !this.state.topMenuOpened,
-            });
+            if (this.state.topMenuOpened) {
+                this.setState({
+                    leftMenuValueStorageVariable: this.state.leftMenuHover,
+                    topMenuOpened: !this.state.topMenuOpened,
+                    leftMenuHover: 0,
+                    leftMenuSwitching: false
+                });
+            } else {
+                this.setState({
+                    leftMenuHover: this.state.leftMenuValueStorageVariable,
+                    topMenuOpened: !this.state.topMenuOpened
+                });
+            }
         }
-
     }
 
     toggleSwitching(){

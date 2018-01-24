@@ -1,4 +1,16 @@
 .Content{
     flex: 1;
-    padding: 50px;
+    overflow: auto;
+}
+
+.ContentContent{
+    padding: 10px 50px 10px 50px;
+    width: calc(100% - 100px);
+    height: 100%;
+}
+
+@media (max-width: 866px){
+    .ContentContent{
+        width: 1000px!important;
+    }
 }

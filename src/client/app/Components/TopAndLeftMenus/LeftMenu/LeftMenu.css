@@ -14,19 +14,20 @@
 }
 
 .LeftMenuOpened {
+    background: linear-gradient(to right, black , transparent);
     width: 350px;
 }
 
 .LeftMenuFinal {
     height: 100%;
     background-color: #5a5a5aff;
-    -webkit-transition: all .2s;
-    transition: all .2s;
-}
-
-.LeftMenuFinalOpened{
+    -webkit-transition: margin-right .2s;
+    transition: margin-right .2s;
     box-shadow: -18px 0 19px 20px black;
 }
+
+/*.LeftMenuFinalOpened{*/
+/*}*/
 
 .LeftMenuFinalSwitch {
     margin-right: 350px;
@@ -40,6 +41,10 @@
     padding: 15px;
     height: calc(100vh - 180px);
     overflow-y: auto;
+}
+
+.SideMenuContent{
+    direction:ltr;
 }
 
 .MenuButton {
@@ -67,4 +72,23 @@
     font-weight: bold;
     border: 1px #b9c0c0 solid;
     text-shadow: 0 0 2px #ffffff;
+}
+
+
+.TopScroller{
+    top: 0;
+    background: linear-gradient(#5a5a5aff, transparent);
+}
+
+.BottomScroller{
+    bottom: 0;
+    background: linear-gradient(transparent, #5a5a5aff);
+}
+
+.TopScroller,.BottomScroller{
+    right: 0px;
+    pointer-events: none;
+    width: 330px;
+    height: 50px;
+    position: absolute;
 }

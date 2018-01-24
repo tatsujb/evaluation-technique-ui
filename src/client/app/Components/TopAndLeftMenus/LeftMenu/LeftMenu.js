@@ -4,6 +4,8 @@ import MenuEvalBack from './MenuEvalBack/MenuEvalBack';
 import MenuEvalFront from './MenuEvalFront/MenuEvalFront';
 import MenuEvalMixed from './MenuEvalMixed/MenuEvalMixed';
 import MenuEvalJobAndDB from './MenuEvalJobAndDB/MenuEvalJobAndDB';
+import MenuEvalCom from './MenuEvalCom/MenuEvalCom';
+import MenuEvalRH from './MenuEvalRH/MenuEvalRH';
 import PropTypes from 'prop-types';
 import './LeftMenu.css';
 import Content from '../../Content/Content'
@@ -25,23 +27,33 @@ class LeftMenu extends Component {
                 <div className={(leftMenuLevel > 0) ? 'LeftMenu LeftMenuOpened' : 'LeftMenu'}>
                     <div className={(leftMenuLevel > 0) ? ((leftMenuSwitching) ? 'LeftMenuFinal LeftMenuFinalOpened LeftMenuFinalSwitch' : 'LeftMenuFinal LeftMenuFinalOpened') : 'LeftMenuFinal'}>
                         <div className="LeftMenuRelative">
-                            {{
-                                1: (
-                                    <MenuHome />
-                                ),
-                                2: (
-                                    <MenuEvalBack />
-                                ),
-                                3: (
-                                    <MenuEvalFront />
-                                ),
-                                4: (
-                                    <MenuEvalMixed />
-                                ),
-                                5: (
-                                    <MenuEvalJobAndDB />
-                                )
-                            }[leftMenuContent]}
+                            <div className="MenuLeft">
+                                <div className="TopScroller" />
+                                {{
+                                    1: (
+                                        <MenuHome />
+                                    ),
+                                    2: (
+                                        <MenuEvalBack />
+                                    ),
+                                    3: (
+                                        <MenuEvalFront />
+                                    ),
+                                    4: (
+                                        <MenuEvalMixed />
+                                    ),
+                                    5: (
+                                        <MenuEvalJobAndDB />
+                                    ),
+                                    6: (
+                                        <MenuEvalCom />
+                                    ),
+                                    7: (
+                                        <MenuEvalRH />
+                                    )
+                                }[leftMenuContent]}
+                                <div className="BottomScroller" />
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class MenuEvalJobAndDB extends Component {
     render(){
         return (
-            <div className="MenuLeft">
+            <div className="SideMenuContent">
                 <div className="MenuButton">Angular 5 (4/3/2)</div>
                 <div className="MenuButton">AngularJS</div>
                 <div className="MenuButton">React JS</div>

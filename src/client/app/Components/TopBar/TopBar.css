@@ -1,14 +1,13 @@
-
-
 .TopBar {
     position: absolute;
     width: 100vw;
     background-color: #434343ff;
     height: 100px;
     display: flex;
-    -webkit-transition: all 0.8s linear;
-    -moz-transition: all 0.8s linear;
-    transition: all 0.8s linear;
+    -webkit-transition: box-shadow 0.8s linear;
+    -moz-transition: box-shadow 0.8s linear;
+    -o-transition: box-shadow 0.8s linear;
+    transition: box-shadow 0.8s linear;
     box-shadow: -5px -16px 19px 20px black;
 }
 
@@ -27,6 +26,10 @@
     color: #0d6094;
     text-shadow: 0 0 10px black;
     line-height: 60px;
+    width: calc(100% - 1px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .menu-icon-container {
