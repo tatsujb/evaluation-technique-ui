@@ -28,7 +28,6 @@ class LeftMenu extends Component {
                     <div className={(leftMenuLevel > 0) ? ((leftMenuSwitching) ? 'LeftMenuFinal LeftMenuFinalOpened LeftMenuFinalSwitch' : 'LeftMenuFinal LeftMenuFinalOpened') : 'LeftMenuFinal'}>
                         <div className="LeftMenuRelative">
                             <div className="MenuLeft">
-                                <div className="TopScroller" />
                                 {{
                                     1: (
                                         <MenuHome />
@@ -52,7 +51,6 @@ class LeftMenu extends Component {
                                         <MenuEvalRH />
                                     )
                                 }[leftMenuContent]}
-                                <div className="BottomScroller" />
                             </div>
                         </div>
                     </div>
