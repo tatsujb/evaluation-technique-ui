@@ -116,10 +116,14 @@
     background-color: #222;
 }
 
-.RotateBlocRotated {
+.BellHovered {
+    background-color: #5f5f5f;
+}
+
+.RotateBlocRotatedDown {
     -webkit-transform: perspective(500) rotateX(-90deg) translateY(3em) translateZ(3em);
 }
-.RotateBloc:hover {
+.RotateBlocRotatedUp {
     -webkit-transform: perspective(500) rotateX(90deg) translateY(-3em) translateZ(3em);
 }
 
@@ -133,7 +137,7 @@
     -webkit-transform: rotateX(90deg) translateY(-3em);
 }
 .BlocUnderside {
-    height: 50px;
+    height: 51px;
     background-color: #5f5f5f;
     color: #fff;
     padding: 1.5em;
@@ -158,10 +162,14 @@
     }
 }
 
-.RotateBlocRotated .BlocOverhead{
+.RotateBlocRotatedDown .BlocOverhead{
     animation: changeColor 5s;
     animation-iteration-count: 1;
     animation-delay: .35s;
+}
+
+.RotateBlocRotatedUp .BlocUnderside {
+
 }
 
 /* SEARCH BARS */

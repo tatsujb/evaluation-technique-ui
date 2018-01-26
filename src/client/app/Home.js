@@ -5,6 +5,7 @@ import LeftMenu from './Components/TopAndLeftMenus/LeftMenu/LeftMenu';
 import './Home.css';
 
 class Home extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -17,8 +18,7 @@ class Home extends Component {
             bellIsHovered: false,
             barIsHovered: false,
             hasBeenReset: false,
-            isThereTimer:false,
-            cantChangeSearching: true,
+            isTheretimerSearch:false,
             leftMenuValueStorageVariable: 0,
             leftMenuHover: 0,
             leftMenuContent: 0,
@@ -32,30 +32,47 @@ class Home extends Component {
         this.toggleSearchIsHovered = this.toggleSearchIsHovered.bind(this);
         this.toggleBellIsHovered = this.toggleBellIsHovered.bind(this);
         this.toggleBell = this.toggleBell.bind(this);
-        this.timer = this.timer.bind(this);
+        this.timerSearch = this.timerSearch.bind(this);
+        this.timerBell = this.timerBell.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState){
-        if(prevProps.barIsHovered !== prevState.barIsHovered
-            && !this.state.barIsHovered
-            && this.state.searching || this.state.belling
-            && !this.state.cantChangeSearching
+        if((prevProps.barIsHovered !== prevState.barIsHovered
+            && !this.state.barIsHovered)
+            && !(!this.state.searching && !this.state.belling)
         ){
-            this.timer();
+            if(this.state.searching){
+                this.timerSearch();
+            } else if(this.state.belling) {
+                this.timerBell();
+            }
         }
     }
 
-    timer() {
+
+    timerSearch() {
         setTimeout(() => {
-            if(!this.state.barIsHovered){
-                this.setState({
-                    searching: false,
-                    belling: false,
-                    searchIsHovered: true});
-            }
+            this.setState({
+                searching: false,
+                belling: false,
+                searchIsHovered: true
+            });
         }, 4500);
         setTimeout(() => {
             this.setState({searchIsHovered: false});
+        }, 5000);
+    }
+
+    timerBell() {
+        setTimeout(() => {
+            this.setState({
+                searching: false,
+                belling: false,
+                bellIsHovered: true
+            });
+        }, 4500);
+        setTimeout(() => {
+            this.setState({bellIsHovered: false});
         }, 5000);
     }
 
@@ -121,21 +138,29 @@ class Home extends Component {
     }
 
     toggleSearch(){
-        this.setState({searching: !this.state.searching,
-            belling: false,
-            cantChangeSearching: true});
-        setTimeout(() => {
-                this.setState({cantChangeSearching: false});
-        }, 500);
+        if(this.state.belling){
+            this.setState({belling: false});
+            setTimeout(() => {
+                this.toggleSearch();
+            }, 500);
+        } else {
+            this.setState({searching: !this.state.searching,
+                });
+
+        }
     }
 
     toggleBell(){
-        this.setState({belling: !this.state.belling,
-            searching: false,
-            cantChangeSearching: true});
-        setTimeout(() => {
-            this.setState({cantChangeSearching: false});
-        }, 500);
+        if(this.state.searching){
+            this.setState({searching: false});
+            setTimeout(() => {
+                this.toggleBell();
+            }, 500);
+        } else {
+            this.setState({belling: !this.state.belling,
+                });
+
+        }
     }
 
     render() {

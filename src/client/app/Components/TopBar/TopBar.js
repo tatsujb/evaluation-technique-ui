@@ -24,9 +24,32 @@ class TopBar extends Component {
                 <div className={firstMenuLevel ? 'TopBar TopBarOpened' : 'TopBar'}
                      onMouseEnter={this.props.toggleBarIsHovered}
                      onMouseLeave={this.props.toggleBarIsHovered}>
-                    <div><img src={logo} className="eole-logo" alt="Company Logo" /></div>
+
+                        <div
+                            className="MenuIconContainer"
+                            onClick={this.props.toggleTopMenu}>
+                            <div className="MenuIconC">
+                                <img
+                                    src={menu}
+                                    className={firstMenuLevel ? 'MenuMenuIcon MenuIconSpin' : 'MenuMenuIcon'}
+                                    alt="Menu Icon" />
+                            </div>
+                        </div>
+                        <div><img src={logo} className="eole-logo" alt="Company Logo" /></div>
                     <div className={
-                        searchIsHovered || searching || belling ? (searching ? 'RotateBloc RotateBlocRotated SearchHovered' : 'RotateBloc SearchHovered') : 'RotateBloc'
+                        !searching
+                        && !belling
+                        && !searchIsHovered
+                        && !bellIsHovered ? 'RotateBloc' :
+                            !searching
+                            && !belling
+                            && !searchIsHovered
+                            && bellIsHovered? 'RotateBloc BellHovered' :
+                                !searching
+                                && belling ? 'RotateBloc RotateBlocRotatedUp BellHovered' :
+                                    !belling
+                                     && searching ? 'RotateBloc RotateBlocRotatedDown SearchHovered' :
+                                 'RotateBloc SearchHovered'
                     } >
                         <div className="BlocOverhead">
                             <form className="SearchBars">
@@ -64,16 +87,7 @@ class TopBar extends Component {
                         onMouseLeave={this.props.toggleBellIsHovered}>
                         <Bell className={belling ? 'BellIcon BellOpened' : 'BellIcon'} />
                     </div>
-                    <div
-                        className="MenuIconContainer"
-                        onClick={this.props.toggleTopMenu}>
-                        <div className="MenuIconC">
-                            <img
-                            src={menu}
-                            className={firstMenuLevel ? 'MenuMenuIcon MenuIconSpin' : 'MenuMenuIcon'}
-                            alt="Menu Icon" />
-                        </div>
-                    </div>
+
                 </div>
         );
     }
