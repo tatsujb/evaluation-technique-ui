@@ -28,9 +28,9 @@ class TopMenu extends Component {
                         className={(leftMenuHover === 1) ? 'menu-item menu-item-selected' : 'menu-item'}
                         onMouseEnter={() => {(leftMenuHover !== 1) ? this.props.setLeftMenuHover(1) :  null }}
                     >
-                        <div className="MenuIconAppear">
-                            <Home className="MenuIcon"/>
-                            <Home className="MenuIconPulse"/>
+                        <div className="TopMenuIconAppear">
+                            <Home className="TopMenuIcon"/>
+                            <Home className="TopMenuIconPulse"/>
                         </div>
                         <div className="MenuText">Home</div>
                     </div>
@@ -38,9 +38,9 @@ class TopMenu extends Component {
                         className={(leftMenuHover === 2) ? 'menu-item menu-item-selected' : 'menu-item'}
                         onMouseEnter={() => {(leftMenuHover !== 2) ? this.props.setLeftMenuHover(2) :  null }}
                     >
-                        <div className="MenuIconAppear">
-                            <CPU className="MenuIcon"/>
-                            <CPU className="MenuIconPulse"/>
+                        <div className="TopMenuIconAppear">
+                            <CPU className="TopMenuIcon"/>
+                            <CPU className="TopMenuIconPulse"/>
                         </div>
                         <div className="MenuText">Évaluation Back</div>
                     </div>
@@ -48,9 +48,9 @@ class TopMenu extends Component {
                         className={(leftMenuHover === 3) ? 'menu-item menu-item-selected' : 'menu-item'}
                         onMouseEnter={() => {(leftMenuHover !== 3) ? this.props.setLeftMenuHover(3) :  null }}
                     >
-                        <div className="MenuIconAppear">
-                            <Front className="MenuIcon"/>
-                            <Front className="MenuIconPulse"/>
+                        <div className="TopMenuIconAppear">
+                            <Front className="TopMenuIcon"/>
+                            <Front className="TopMenuIconPulse"/>
                         </div>
                         <div className="MenuText">Évaluation Front</div>
                     </div>
@@ -58,9 +58,9 @@ class TopMenu extends Component {
                         className={(leftMenuHover === 4) ? 'menu-item menu-item-selected' : 'menu-item'}
                         onMouseEnter={() => {(leftMenuHover !== 4) ? this.props.setLeftMenuHover(4) :  null }}
                     >
-                        <div className="MenuIconAppear">
-                            <Web className="MenuIcon"/>
-                            <Web className="MenuIconPulse"/>
+                        <div className="TopMenuIconAppear">
+                            <Web className="TopMenuIcon"/>
+                            <Web className="TopMenuIconPulse"/>
                         </div>
                         <div className="MenuText">Évaluation Mixte</div>
                     </div>
@@ -68,9 +68,9 @@ class TopMenu extends Component {
                         className={(leftMenuHover === 5) ? 'menu-item menu-item-selected' : 'menu-item'}
                         onMouseEnter={() => {(leftMenuHover !== 5) ? this.props.setLeftMenuHover(5) :  null }}
                     >
-                        <div className="MenuIconAppear">
-                            <Database className="MenuIcon"/>
-                            <Database className="MenuIconPulse"/>
+                        <div className="TopMenuIconAppear">
+                            <Database className="TopMenuIcon"/>
+                            <Database className="TopMenuIconPulse"/>
                         </div>
                         <div className="MenuText">Évaluation Metier/DB</div>
                     </div>
@@ -78,9 +78,9 @@ class TopMenu extends Component {
                         className={(leftMenuHover === 6) ? 'menu-item menu-item-selected' : 'menu-item'}
                         onMouseEnter={() => {(leftMenuHover !== 6) ? this.props.setLeftMenuHover(6) :  null }}
                     >
-                        <div className="MenuIconAppear">
-                            <Com className="MenuIcon"/>
-                            <Com className="MenuIconPulse"/>
+                        <div className="TopMenuIconAppear">
+                            <Com className="TopMenuIcon"/>
+                            <Com className="TopMenuIconPulse"/>
                         </div>
                         <div className="MenuText">Évaluation Com</div>
                     </div>
@@ -88,9 +88,9 @@ class TopMenu extends Component {
                         className={(leftMenuHover === 7) ? 'menu-item menu-item-selected' : 'menu-item'}
                         onMouseEnter={() => {(leftMenuHover !== 7) ? this.props.setLeftMenuHover(7) :  null }}
                     >
-                        <div className="MenuIconAppear">
-                            <RH className="MenuIcon"/>
-                            <RH className="MenuIconPulse"/>
+                        <div className="TopMenuIconAppear">
+                            <RH className="TopMenuIcon"/>
+                            <RH className="TopMenuIconPulse"/>
                         </div>
                         <div className="MenuText">Évaluation RH</div>
                     </div>

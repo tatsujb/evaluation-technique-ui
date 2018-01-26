@@ -41,7 +41,7 @@
     margin: 5px;
     border: 1px #686c6c solid;
     border-radius: 5px;
-    line-height: 35px;
+    line-height: 40px;
     cursor: pointer;
     text-shadow: 0 0 5px #000000;
     -webkit-transition: all .3s linear;
@@ -61,7 +61,7 @@
     text-shadow: 0 0 10px #ffffff;
 }
 
-.MenuIcon, .MenuIconPulse{
+.TopMenuIcon, .TopMenuIconPulse{
     pointer-events: none;
     opacity: 0;
     position: absolute;
@@ -74,7 +74,7 @@
     transition: all .3s linear;
 }
 
-.menu-item-selected .MenuIcon{
+.menu-item-selected .TopMenuIcon{
     opacity: 1;
     font-size: x-large;
     left: 8px;
@@ -87,7 +87,7 @@
     transform: rotate(360deg);
 }
 
-.menu-item-selected .MenuIconPulse{
+.menu-item-selected .TopMenuIconPulse{
     animation: pulsate .3s linear;
     animation-iteration-count: 1;
     animation-delay: .35s;
@@ -105,4 +105,3 @@
         left: -35px;
     }
 }
-

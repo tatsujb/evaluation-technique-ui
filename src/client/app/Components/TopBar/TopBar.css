@@ -4,10 +4,10 @@
     background-color: #434343ff;
     height: 100px;
     display: flex;
-    -webkit-transition: box-shadow 0.8s linear;
-    -moz-transition: box-shadow 0.8s linear;
-    -o-transition: box-shadow 0.8s linear;
-    transition: box-shadow 0.8s linear;
+    -webkit-transition: box-shadow 0.8s;
+    -moz-transition: box-shadow 0.8s;
+    -o-transition: box-shadow 0.8s;
+    transition: box-shadow 0.8s;
     box-shadow: -5px -16px 19px 20px black;
 }
 
@@ -20,25 +20,48 @@
     padding: 16px 50px 0 20px;
     filter: drop-shadow(0 0 8px black);
 }
-
-.TopBar-title {
-    flex: 1;
-    color: #0d6094;
-    text-shadow: 0 0 10px black;
-    line-height: 60px;
-    width: calc(100% - 1px);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+/* SEARCH ICON */
+.SearchButton, .BellButton{
+    height: 100%;
+    width: 105px;
+    cursor: pointer;
 }
 
-.menu-icon-container {
+.BellIcon{
+    padding: 17px 0 0 33px;
+    font-size: 62px;
+}
+
+.SearchIcon{
+    padding: 25px 0 0 50px;
+    font-size: 50px;
+}
+
+.SearchIcon, .BellIcon{
+    color: #0d6094;
+    filter: drop-shadow(0 0 8px black);
+    -webkit-transition: all .8s;
+    -moz-transition: all .8s;
+    -o-transition: all .8s;
+    transition: all .8s;
+}
+
+.SearchButton:hover .SearchIcon, .BellButton:hover .BellIcon{
+    filter: brightness(120%) drop-shadow(0 0 8px #313d7c);
+}
+
+.SearchOpened, .BellOpened{
+    filter: brightness(120%) drop-shadow(0 0 8px #313d7c);
+}
+
+/* MENU ICON */
+.MenuIconContainer {
     height: 100%;
     width: 90px;
     cursor: pointer;
 }
 
-.menu-icon{
+.MenuMenuIcon{
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     width: 50px;
@@ -47,15 +70,15 @@
     transition-property: transform;
 }
 
-.menu-icon-c{
+.MenuIconC{
     padding: 25px 0 0 25px;
 }
 
-.menu-icon-container:hover > .menu-icon-c > .menu-icon {
+.MenuIconContainer:hover > .MenuIconC > .MenuMenuIcon {
     filter: brightness(120%) drop-shadow(0 0 8px #313d7c);
 }
 
-.spin{
+.MenuIconSpin{
     filter: brightness(120%) drop-shadow(0 0 8px #313d7c);
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
@@ -63,3 +86,188 @@
     -o-transform:rotate(360deg);
 }
 
+
+
+
+
+/* BOX BAR */
+.TopBar-title {
+    color: #0d6094;
+    padding-left: 15px;
+    text-shadow: 0 0 10px black;
+    line-height: 90px;
+    font-size: xx-large;
+    font-weight: bold;
+    width: calc(100% - 1px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.RotateBloc {
+    background-color: #434343ff;
+    flex: 1;
+    -webkit-transform: perspective(500);
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: .5s;
+}
+
+.SearchHovered {
+    background-color: #222;
+}
+
+.RotateBlocRotated {
+    -webkit-transform: perspective(500) rotateX(-90deg) translateY(3em) translateZ(3em);
+}
+.RotateBloc:hover {
+    -webkit-transform: perspective(500) rotateX(90deg) translateY(-3em) translateZ(3em);
+}
+
+.BlocOverhead{
+    position: absolute;
+    top: -50px;
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+    height: calc(100% - 1px);
+    -webkit-transform: rotateX(90deg) translateY(-3em);
+}
+.BlocUnderside {
+    height: 50px;
+    background-color: #5f5f5f;
+    color: #fff;
+    padding: 1.5em;
+    -webkit-transform: rotateX(-90deg);
+    -webkit-transform-origin: 100% 0;
+    -webkit-transition: .5s;
+}
+
+
+@keyframes changeColor{
+    0%{
+        background-color: #222;
+    }
+    25%{
+        background-color: #434343ff;
+    }
+    75%{
+        background-color: #434343ff;
+    }
+    100%{
+        background-color: #222;
+    }
+}
+
+.RotateBlocRotated .BlocOverhead{
+    animation: changeColor 5s;
+    animation-iteration-count: 1;
+    animation-delay: .35s;
+}
+
+/* SEARCH BARS */
+.SearchBars{
+    display:flex;
+    margin: 25px 0 0 190px;
+}
+
+.group{
+    position:relative;
+    flex: 1;
+}
+
+.group:first-child{
+    margin-right: 200px;
+}
+
+input{
+    font-size:22px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom:1px solid #757575;
+    box-sizing:border-box;
+    background-color: transparent;
+    transition: .4s;
+    color: #0d6094;
+}
+
+input:focus, input:valid{
+    outline:none;
+    border-bottom:1px solid #0d6094;
+}
+
+
+label{
+    color:#999;
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+    transition: .2s ease all;
+    -moz-transition: .2s ease all;
+    -webkit-transition: .2s ease all;
+}
+
+input:focus ~ label, input:valid ~ label{
+    left:-125px;
+    color:#0d6094;
+}
+
+.bar{
+    position:relative; display:block;
+}
+.bar:before, .bar:after{
+    content:'';
+    height:2px;
+    width:0;
+    bottom:1px;
+    position:absolute;
+    background:#0d6094;
+    transition: .8s ease all;
+    -moz-transition: .8s ease all;
+    -webkit-transition: .8s ease all;
+}
+
+.bar:before {
+    left:50%;
+}
+
+.bar:after {
+    right:50%;
+}
+
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width:50%;
+}
+
+.highlight {
+    position:absolute;
+    height:60%;
+    width:100px;
+    top:25%;
+    left:0;
+    pointer-events:none;
+    opacity:0.5;
+}
+
+input:focus ~ .highlight {
+    -webkit-animation:inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
+    animation:inputHighlighter 0.3s ease;
+}
+
+@-webkit-keyframes inputHighlighter {
+    from { background:#0d6094; }
+    to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+    from { background:#0d6094; }
+    to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+    from { background:#0d6094; }
+    to 	{ width:0; background:transparent; }
+}

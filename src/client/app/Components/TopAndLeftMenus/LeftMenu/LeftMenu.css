@@ -14,7 +14,7 @@
 }
 
 .LeftMenuOpened {
-    background: linear-gradient(to right, black , transparent);
+    background: linear-gradient(to right, #222 , transparent);
     width: 350px;
 }
 
